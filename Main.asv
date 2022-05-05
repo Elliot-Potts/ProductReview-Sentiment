@@ -24,11 +24,7 @@ train_data = lexicon_data(training(partition),:);
 test_data = lexicon_data(test(partition),:);
 
 % Now take the data and convert words to vectors.
-train_words = train_data.Word;
-trainX = word2vec(word_embedding,train_words);
-trainY = train_data.Label;
-
-
+train_words = train_data.
 
 
 
