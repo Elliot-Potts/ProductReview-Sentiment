@@ -24,6 +24,11 @@ vdr_posx = vdr_compound_scores > 0;
 string_positive = string(vdr_posx);
 string_negative = string(~vdr_posx);  % get opposite of string_positive
 
+disp("VDR POSX");
+string_positive;
+disp("VDR NEGX");
+string_negative;
+
 figure
 subplot(1,2,1)
 wordcloud(string_positive);
