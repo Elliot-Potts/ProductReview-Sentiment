@@ -1,6 +1,7 @@
-% MATLAB files for KF4052. 
-% W20017851. Sentiment Analysis of Amazon Reviews.
-
+function [] = setupSVMClassifier()
+%SETUPSVMCLASSIFIER Creates an SVM classifier and fits data to (model)
+%   Imports necessary word embedding and lexicon data and trains data using
+%   the embedding with word2vec.
 
 % Load the FastText word embedding from the toolkit.
 word_embedding = fastTextWordEmbedding;
@@ -58,8 +59,5 @@ subplot(1,2,2)
 wordcloud(test_words(~positive_x),scores(~positive_x,2));
 title("Negative Sentiment - Predicted")
 
-
-
-
-
+end
 
