@@ -39,19 +39,23 @@ testY = test_data.Label;
 % Use the previously created SVM model (model) to predict test vectors.
 [predictionY,scores] = predict(model,testX);
 
+
+% Code below is used for viewing the predictions of sentiment data from the
+% positive and negative lexicons.
+
 % 'confusionchart' which shows predicted values and the test values.
 % Confusionchart shows predicted values against true class values.
 figure
 confusionchart(testY,predictionY);
 
-% Load wordclouds of Positive and Negative sentiment.
+% Load wordclouds of Positive and Negative sentiment from lexicons.
 figure
 subplot(1,2,1)
 positive_x = predictionY == "Positive";
 wordcloud(test_words(positive_x),scores(positive_x,1));
-title("Positive Sentiment - Predicted")
+title("Pos. Sentiment - Lexicon Prediction")
 
 % Load Negative predictions using boolean NOT operator (~).
 subplot(1,2,2)
 wordcloud(test_words(~positive_x),scores(~positive_x,2));
-title("Negative Sentiment - Predicted")
+title("Neg. Sentiment - Lexicon Prediction")
