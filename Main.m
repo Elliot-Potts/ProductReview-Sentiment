@@ -2,6 +2,9 @@
 % W20017851. Sentiment Analysis of Amazon Reviews.
 
 % Setup Support Vector Machine model using setupSVMClassifierScript.m
-setupSVMClassifierScript
+setupSVMClassifier
+
+% Run Sentiment Calculator on input text data
+calculateReviewSentiment
 
 
