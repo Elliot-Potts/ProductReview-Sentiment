@@ -28,10 +28,12 @@ make_input_vectors = word2vec(word_embedding,get_words);
 figure
 subplot(1,2,1)
 input_positive_x = input_predictionY == "Positive";
+fprintf("SVM Review Positive - Min Sentiment: %d,Max Sentiment: %d\n", min(input_scores(input_positive_x)), max(input_scores(input_positive_x)));
 wordcloud(get_words(input_positive_x),input_scores(input_positive_x,1));
 title("Pos. Sentiment - Review Prediction")
 
 subplot(1,2,2)
+fprintf("SVM Review Negative - Min Sentiment: %d,Max Sentiment: %d\n", min(input_scores(~input_positive_x)), max(input_scores(~input_positive_x)));
 wordcloud(get_words(~input_positive_x),input_scores(~input_positive_x,2));
 title("Neg. Sentiment - Review Prediction")
 
